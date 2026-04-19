@@ -1,0 +1,96 @@
+/* Dark Theme - Inspired by tharunspeaks.in */
+
+:root {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #111111;
+  --bg-card: #1a1a1a;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --accent-purple: #8b5cf6;
+  --accent-pink: #ec4899;
+  --accent-blue: #3b82f6;
+  --border-color: #2a2a2a;
+}
+
+/* Global Dark Background */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Dark Theme Text */
+.text-gray-900 { color: var(--text-primary) !important; }
+.text-gray-800 { color: var(--text-primary) !important; }
+.text-gray-700 { color: #e0e0e0 !important; }
+.text-gray-600 { color: var(--text-secondary) !important; }
+.text-gray-500 { color: #808080 !important; }
+
+/* Dark Backgrounds */
+.bg-white { background-color: var(--bg-card) !important; }
+.bg-gray-50 { background-color: var(--bg-secondary) !important; }
+.bg-gray-100 { background-color: var(--bg-card) !important; }
+
+/* Dark Borders */
+.border-gray-100,
+.border-gray-200,
+.border-white { border-color: var(--border-color) !important; }
+
+/* Gradients for Dark Theme */
+.dark-gradient {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+}
+
+/* Glowing Text Effect */
+.glow-text {
+  text-shadow: 0 0 20px rgba(139, 92, 246, 0.5),
+               0 0 40px rgba(139, 92, 246, 0.3),
+               0 0 60px rgba(139, 92, 246, 0.1);
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* 3D Text Effect */
+.text-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+/* Neon Glow */
+.neon-glow {
+  box-shadow: 
+    0 0 5px rgba(139, 92, 246, 0.8),
+    0 0 10px rgba(139, 92, 246, 0.5),
+    0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+/* Glassmorphism Dark */
+.glass-dark {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Gradient Rotation Animation */
+@keyframes gradient-rotate {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}

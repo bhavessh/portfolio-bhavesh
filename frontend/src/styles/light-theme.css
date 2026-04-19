@@ -1,0 +1,90 @@
+/* Light Minimal Theme */
+
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #fafafa;
+  --bg-card: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #666666;
+  --text-muted: #999999;
+  --accent-color: #3b82f6;
+  --accent-hover: #2563eb;
+  --border-color: #e5e5e5;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Global Light Background */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Light Theme Text */
+.text-gray-900 { color: var(--text-primary) !important; }
+.text-gray-800 { color: var(--text-primary) !important; }
+.text-gray-700 { color: #374151 !important; }
+.text-gray-600 { color: var(--text-secondary) !important; }
+.text-gray-500 { color: var(--text-muted) !important; }
+.text-gray-400 { color: #9ca3af !important; }
+
+/* Light Backgrounds */
+.bg-white { background-color: var(--bg-card) !important; }
+.bg-gray-50 { background-color: var(--bg-secondary) !important; }
+.bg-gray-100 { background-color: #f3f4f6 !important; }
+
+/* Light Borders */
+.border-gray-100,
+.border-gray-200,
+.border-white { border-color: var(--border-color) !important; }
+
+/* Subtle Shadows */
+.shadow-subtle {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.shadow-card {
+  box-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.02),
+    0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.shadow-card-hover {
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.05),
+    0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+/* Clean Cards */
+.card-light {
+  background: white;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  transition: all 0.2s ease;
+}
+
+.card-light:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-color: #d1d5db;
+}
+
+/* Primary Blue Accent */
+.accent-blue {
+  color: #3b82f6;
+}
+
+.bg-accent-blue {
+  background-color: #3b82f6;
+}
+
+/* Gradient for Hero */
+.gradient-hero-light {
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #f1f5f9 100%);
+}
+
+/* Smooth transitions */
+* {
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}

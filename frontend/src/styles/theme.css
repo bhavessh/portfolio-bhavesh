@@ -1,0 +1,219 @@
+/* Theme Variables */
+:root {
+  /* Dark Theme (Default) */
+  --bg-primary: #0a0a0f;
+  --bg-secondary: rgba(255, 255, 255, 0.05);
+  --bg-card: rgba(255, 255, 255, 0.05);
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.6);
+  --text-muted: rgba(255, 255, 255, 0.4);
+  --accent: #ccff00;
+  --accent-glow: rgba(204, 255, 0, 0.3);
+  --border: rgba(255, 255, 255, 0.1);
+  --border-hover: rgba(204, 255, 0, 0.3);
+  --overlay-gradient: radial-gradient(ellipse at top, rgba(204, 255, 0, 0.05) 0%, transparent 50%);
+  --grid-color: rgba(204, 255, 0, 0.03);
+  --texture: none;
+}
+
+[data-theme="light"] {
+  /* Notion-style Clean Minimal Light Theme */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f7f7f5;
+  --bg-card: #ffffff;
+  --bg-hover: rgba(0, 0, 0, 0.03);
+  --text-primary: #37352f;
+  --text-secondary: #6b6b6b;
+  --text-muted: #9ca3af;
+  --accent: #37352f;
+  --accent-light: #6b6b6b;
+  --accent-glow: rgba(55, 53, 47, 0.06);
+  --border: rgba(0, 0, 0, 0.09);
+  --border-strong: rgba(0, 0, 0, 0.16);
+  --border-hover: rgba(0, 0, 0, 0.15);
+  --overlay-gradient: linear-gradient(180deg, #ffffff 0%, #f7f7f5 100%);
+  --grid-color: rgba(0, 0, 0, 0.025);
+  --surface: #f7f7f5;
+  --surface-raised: #ffffff;
+}
+
+/* Theme Transition */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Dark Theme Specific Textures */
+.dark-texture-grid {
+  background-image: 
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Light Theme Specific Textures */
+.light-texture-dots {
+  background-image: radial-gradient(circle, var(--grid-color) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.light-texture-waves {
+  background: 
+    radial-gradient(ellipse at 20% 30%, rgba(59, 130, 246, 0.08) 0%, transparent 40%),
+    radial-gradient(ellipse at 80% 70%, rgba(139, 92, 246, 0.08) 0%, transparent 40%),
+    radial-gradient(ellipse at 50% 50%, rgba(236, 72, 153, 0.05) 0%, transparent 50%);
+}
+
+/* Theme-aware components */
+.theme-bg {
+  background-color: var(--bg-primary);
+}
+
+.theme-bg-secondary {
+  background-color: var(--bg-secondary);
+}
+
+.theme-bg-card {
+  background-color: var(--bg-card);
+}
+
+.theme-text {
+  color: var(--text-primary);
+}
+
+.theme-text-secondary {
+  color: var(--text-secondary);
+}
+
+.theme-text-muted {
+  color: var(--text-muted);
+}
+
+.theme-accent {
+  color: var(--accent);
+}
+
+.theme-accent-bg {
+  background-color: var(--accent);
+}
+
+.theme-border {
+  border-color: var(--border);
+}
+
+.theme-border-hover:hover {
+  border-color: var(--border-hover);
+}
+
+/* Gradient Overlays */
+.theme-overlay {
+  background: var(--overlay-gradient);
+}
+
+/* Glow Effects */
+.theme-glow {
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.theme-glow-strong {
+  box-shadow: 0 0 30px var(--accent-glow), 0 0 60px var(--accent-glow);
+}
+
+/* Noise Texture for Light Theme */
+.theme-noise::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--texture);
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Dark mesh gradient */
+.dark-mesh {
+  background: 
+    radial-gradient(at 40% 20%, rgba(120, 119, 198, 0.3) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, rgba(204, 255, 0, 0.1) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, rgba(204, 255, 0, 0.1) 0px, transparent 50%),
+    radial-gradient(at 80% 50%, rgba(120, 119, 198, 0.2) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(204, 255, 0, 0.15) 0px, transparent 50%);
+}
+
+/* Light mesh gradient - Notion inspired subtle */
+.light-mesh {
+  background: 
+    radial-gradient(at 20% 0%, rgba(0, 0, 0, 0.02) 0px, transparent 50%),
+    radial-gradient(at 80% 100%, rgba(0, 0, 0, 0.02) 0px, transparent 50%);
+}
+
+/* Notion-style surface backgrounds */
+[data-theme="light"] .surface {
+  background-color: var(--surface);
+}
+
+[data-theme="light"] .surface-raised {
+  background-color: var(--surface-raised);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .surface-hover:hover {
+  background-color: var(--bg-hover);
+}
+
+/* Notion-style callout */
+[data-theme="light"] .callout {
+  background-color: #f7f7f5;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 16px;
+}
+
+[data-theme="light"] .notion-link {
+  color: var(--text-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: rgba(0, 0, 0, 0.2);
+  transition: text-decoration-color 0.2s;
+}
+
+[data-theme="light"] .notion-link:hover {
+  text-decoration-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Section specific textures */
+.hero-texture-dark {
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(204, 255, 0, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(204, 255, 0, 0.05) 0%, transparent 40%);
+}
+
+.hero-texture-light {
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 0% 100%, rgba(139, 92, 246, 0.08) 0%, transparent 40%);
+}
+
+.projects-texture-dark {
+  background-image: 
+    linear-gradient(180deg, transparent 0%, rgba(204, 255, 0, 0.02) 50%, transparent 100%);
+}
+
+.projects-texture-light {
+  background: 
+    linear-gradient(135deg, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
+    linear-gradient(225deg, rgba(139, 92, 246, 0.03) 0%, transparent 50%);
+}
+
+.journey-texture-dark {
+  background-image: 
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+.journey-texture-light {
+  background-image: 
+    linear-gradient(rgba(59, 130, 246, 0.05) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.05) 2px, transparent 2px);
+  background-size: 100px 100px;
+}

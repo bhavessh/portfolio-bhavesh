@@ -1,0 +1,16 @@
+{
+  "name": "portfolio-cms",
+  "version": "1.0.0",
+  "description": "Portfolio CMS with Astro frontend and Node.js backend",
+  "scripts": {
+    "dev": "cd frontend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "preview": "cd frontend && npm run preview",
+    "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install"
+  },
+  "keywords": ["portfolio", "cms", "astro", "react"],
+  "author": "",
+  "license": "ISC"
+}

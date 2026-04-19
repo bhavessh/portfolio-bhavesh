@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import NavigationGlass from '../components/NavigationGlass';
+import HeroLight from '../components/HeroLight';
+import ProjectsBoxed from '../components/ProjectsBoxed';
+import AlignedExperience from '../components/AlignedExperience';
+import About from '../components/About';
+import ContactEmailJSWorking from '../components/ContactEmailJSWorking';
+import Footer from '../components/Footer';
+import ThemeToggle from '../components/ThemeToggle';
+import AdminPanel from '../components/AdminPanel';
+import AskMeAnythingEnhanced from '../components/AskMeAnythingEnhanced';
+import { ThemeProvider } from '../context/ThemeContext';
+import '../styles/theme.css';
+---
+
+<Layout title="Bhavesh - Full Stack Developer">
+  <ThemeProvider client:only="react">
+    <NavigationGlass client:only="react" />
+    <main class="theme-bg">
+      <HeroLight client:only="react" />
+      <ProjectsBoxed client:only="react" />
+      <AlignedExperience client:only="react" />
+      <About client:only="react" />
+      <ContactEmailJSWorking client:only="react" />
+    </main>
+    <Footer client:only="react" />
+    <AskMeAnythingEnhanced client:only="react" />
+    <AdminPanel client:only="react" />
+    <ThemeToggle client:only="react" />
+  </ThemeProvider>
+</Layout>
