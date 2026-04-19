@@ -1,4 +1,17 @@
 services:
+  # Frontend Static Site
+  - type: web
+    name: portfolio-bhavesh
+    runtime: static
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: ./frontend/dist
+    envVars:
+      - key: PUBLIC_API_URL
+        value: https://portfolio-cms-backend.onrender.com/api
+      - key: NODE_ENV
+        value: production
+
+  # Backend API Service
   - type: web
     name: portfolio-cms-backend
     runtime: node
