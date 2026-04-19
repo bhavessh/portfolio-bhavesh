@@ -128,18 +128,18 @@ export default function ProjectDetail({ project, isOpen, onClose }: ProjectDetai
                   <h2 className="text-2xl font-bold">Why I Made This</h2>
                 </div>
                 
-                <div className="bg-gray-50 rounded-2xl p-8 md:p-12">
+                <div className="bg-white border border-gray-200 rounded-2xl p-8 md:p-12 shadow-sm">
                   {project.idea && (
                     <div className="mb-8">
                       <h3 className="text-lg font-semibold mb-3 text-gray-900">The Idea</h3>
-                      <p className="text-gray-600 leading-relaxed">{project.idea}</p>
+                      <p className="text-gray-700 leading-relaxed">{project.idea}</p>
                     </div>
                   )}
-                  
+
                   {project.whyMade && (
                     <div>
                       <h3 className="text-lg font-semibold mb-3 text-gray-900">The Story Behind</h3>
-                      <p className="text-gray-600 leading-relaxed whitespace-pre-line">{project.whyMade}</p>
+                      <p className="text-gray-700 leading-relaxed whitespace-pre-line">{project.whyMade}</p>
                     </div>
                   )}
                 </div>

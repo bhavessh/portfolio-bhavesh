@@ -22,7 +22,17 @@ const siteConfigSchema = new mongoose.Schema({
   
   // Meta
   siteTitle: { type: String, default: 'Portfolio' },
-  siteDescription: { type: String, default: 'Full Stack Developer Portfolio' }
+  siteDescription: { type: String, default: 'Full Stack Developer Portfolio' },
+
+  // Stats (editable via admin)
+  statsYears: { type: String, default: '6+' },
+  statsYearsLabel: { type: String, default: 'Years' },
+  statsProjects: { type: String, default: '15+' },
+  statsProjectsLabel: { type: String, default: 'Projects' },
+  statsSaas: { type: String, default: '5+' },
+  statsSaasLabel: { type: String, default: 'SaaS' },
+  statsClients: { type: String, default: '10+' },
+  statsClientsLabel: { type: String, default: 'Clients' }
 }, {
   timestamps: true
 });

@@ -1352,6 +1352,94 @@ function SiteConfigForm({ formData, setFormData }: { formData: any; setFormData:
           </div>
         </div>
       </div>
+
+      <div className="p-4 border border-white/10 rounded-lg bg-white/5">
+        <h4 className="font-medium text-[#ccff00] mb-4 flex items-center gap-2">
+          <Zap className="w-4 h-4" /> Stats (Hero Section)
+        </h4>
+        <div className="grid md:grid-cols-4 gap-4">
+          <div>
+            <label className="block text-sm font-medium mb-1 text-white/80">Years Value</label>
+            <input
+              type="text"
+              value={formData.statsYears || ''}
+              onChange={(e) => setFormData({ ...formData, statsYears: e.target.value })}
+              className="w-full px-3 py-2 border border-white/20 rounded-lg bg-white/10 text-white placeholder-white/50 focus:border-[#ccff00] focus:outline-none"
+              placeholder="6+"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1 text-white/80">Years Label</label>
+            <input
+              type="text"
+              value={formData.statsYearsLabel || ''}
+              onChange={(e) => setFormData({ ...formData, statsYearsLabel: e.target.value })}
+              className="w-full px-3 py-2 border border-white/20 rounded-lg bg-white/10 text-white placeholder-white/50 focus:border-[#ccff00] focus:outline-none"
+              placeholder="Years"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1 text-white/80">Projects Value</label>
+            <input
+              type="text"
+              value={formData.statsProjects || ''}
+              onChange={(e) => setFormData({ ...formData, statsProjects: e.target.value })}
+              className="w-full px-3 py-2 border border-white/20 rounded-lg bg-white/10 text-white placeholder-white/50 focus:border-[#ccff00] focus:outline-none"
+              placeholder="15+"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1 text-white/80">Projects Label</label>
+            <input
+              type="text"
+              value={formData.statsProjectsLabel || ''}
+              onChange={(e) => setFormData({ ...formData, statsProjectsLabel: e.target.value })}
+              className="w-full px-3 py-2 border border-white/20 rounded-lg bg-white/10 text-white placeholder-white/50 focus:border-[#ccff00] focus:outline-none"
+              placeholder="Projects"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1 text-white/80">SaaS Value</label>
+            <input
+              type="text"
+              value={formData.statsSaas || ''}
+              onChange={(e) => setFormData({ ...formData, statsSaas: e.target.value })}
+              className="w-full px-3 py-2 border border-white/20 rounded-lg bg-white/10 text-white placeholder-white/50 focus:border-[#ccff00] focus:outline-none"
+              placeholder="5+"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1 text-white/80">SaaS Label</label>
+            <input
+              type="text"
+              value={formData.statsSaasLabel || ''}
+              onChange={(e) => setFormData({ ...formData, statsSaasLabel: e.target.value })}
+              className="w-full px-3 py-2 border border-white/20 rounded-lg bg-white/10 text-white placeholder-white/50 focus:border-[#ccff00] focus:outline-none"
+              placeholder="SaaS"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1 text-white/80">Clients Value</label>
+            <input
+              type="text"
+              value={formData.statsClients || ''}
+              onChange={(e) => setFormData({ ...formData, statsClients: e.target.value })}
+              className="w-full px-3 py-2 border border-white/20 rounded-lg bg-white/10 text-white placeholder-white/50 focus:border-[#ccff00] focus:outline-none"
+              placeholder="10+"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1 text-white/80">Clients Label</label>
+            <input
+              type="text"
+              value={formData.statsClientsLabel || ''}
+              onChange={(e) => setFormData({ ...formData, statsClientsLabel: e.target.value })}
+              className="w-full px-3 py-2 border border-white/20 rounded-lg bg-white/10 text-white placeholder-white/50 focus:border-[#ccff00] focus:outline-none"
+              placeholder="Clients"
+            />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -429,7 +429,7 @@ export default function AppleStyleExperience() {
               How I Got <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Here</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              From college student to senior developer - every step shaped who I am today.
+              From college student to this - every step shaped who I am today.
             </p>
           </motion.div>
           

@@ -1,7 +1,9 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap/dist/gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { motion } from 'framer-motion';
+
+const API_URL = import.meta.env.PUBLIC_API_URL || 'http://localhost:5001/api';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -95,6 +97,50 @@ function Animated3DText({ text, className = '' }: { text: string; className?: st
 
 export default function HeroTharunStyle() {
   const heroRef = useRef<HTMLDivElement>(null);
+  const [stats, setStats] = useState({
+    years: '6+',
+    yearsLabel: 'Years Experience',
+    projects: '15+',
+    projectsLabel: 'Projects Delivered',
+    saas: '5+',
+    saasLabel: 'SaaS Products',
+    clients: '10+',
+    clientsLabel: 'Happy Clients'
+  });
+
+  // Fetch stats from API
+  useEffect(() => {
+    async function fetchStats() {
+      try {
+        const res = await fetch(`${API_URL}/siteconfig`);
+        if (res.ok) {
+          const data = await res.json();
+          setStats({
+            years: data.statsYears || '6+',
+            yearsLabel: data.statsYearsLabel || 'Years Experience',
+            projects: data.statsProjects || '15+',
+            projectsLabel: data.statsProjectsLabel || 'Projects Delivered',
+            saas: data.statsSaas || '5+',
+            saasLabel: data.statsSaasLabel || 'SaaS Products',
+            clients: data.statsClients || '10+',
+            clientsLabel: data.statsClientsLabel || 'Happy Clients'
+          });
+        }
+      } catch (error) {
+        console.error('Failed to fetch stats:', error);
+      }
+    }
+    fetchStats();
+
+    // Poll for updates every 5 seconds
+    const interval = setInterval(() => {
+      if (!document.hidden) {
+        fetchStats();
+      }
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -348,7 +394,7 @@ export default function HeroTharunStyle() {
               animate={{ x: [0, 10, 0] }}
               transition={{ duration: 2, repeat: Infinity, delay: 1 }}
             >
-              <span className="text-blue-300 font-semibold text-sm">6+ Years</span>
+              <span className="text-blue-300 font-semibold text-sm">{stats.years} {stats.yearsLabel.split(' ')[0]}</span>
             </motion.div>
           </motion.div>
         </div>
@@ -361,10 +407,10 @@ export default function HeroTharunStyle() {
           className="flex flex-wrap justify-center gap-8 md:gap-16 pt-12 pb-8 border-t border-white/10"
         >
           {[
-            { num: '6+', label: 'Years Experience' },
-            { num: '15+', label: 'Projects Delivered' },
-            { num: '5+', label: 'SaaS Products' },
-            { num: '10+', label: 'Happy Clients' }
+            { num: stats.years, label: stats.yearsLabel },
+            { num: stats.projects, label: stats.projectsLabel },
+            { num: stats.saas, label: stats.saasLabel },
+            { num: stats.clients, label: stats.clientsLabel }
           ].map((stat, i) => (
             <motion.div
               key={stat.label}
@@ -372,7 +418,7 @@ export default function HeroTharunStyle() {
               whileHover={{ scale: 1.1, y: -5 }}
               transition={{ type: 'spring' }}
             >
-              <span 
+              <span
                 className="block text-3xl md:text-4xl font-bold mb-1"
                 style={{
                   background: 'linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%)',
