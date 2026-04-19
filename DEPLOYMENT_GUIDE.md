@@ -24,7 +24,7 @@ Deploy your Portfolio CMS for FREE using:
    ```
    NODE_ENV=production
    PORT=10000
-   MONGODB_URI=yiur url
+   MONGODB_URI=your url
    JWT_SECRET=your-secret-key-here
    ADMIN_PASSWORD= password
    ```

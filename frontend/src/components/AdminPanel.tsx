@@ -86,6 +86,15 @@ interface SiteConfig {
   contactLocation: string;
   siteTitle: string;
   siteDescription: string;
+  // Stats
+  statsYears?: string;
+  statsYearsLabel?: string;
+  statsProjects?: string;
+  statsProjectsLabel?: string;
+  statsSaas?: string;
+  statsSaasLabel?: string;
+  statsClients?: string;
+  statsClientsLabel?: string;
 }
 
 export default function AdminPanel() {
