@@ -24,9 +24,9 @@ Deploy your Portfolio CMS for FREE using:
    ```
    NODE_ENV=production
    PORT=10000
-   MONGODB_URI=mongodb+srv://admin:Portfolio123@dataquickcut.tpbcqb6.mongodb.net/portfolio?retryWrites=true&w=majority&appName=dataQuickcut
+   MONGODB_URI=yiur url
    JWT_SECRET=your-secret-key-here
-   ADMIN_PASSWORD=JAIN@sabh*1008
+   ADMIN_PASSWORD= password
    ```
 
 6. Click **"Create Web Service"**
